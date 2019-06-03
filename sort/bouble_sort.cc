@@ -21,7 +21,7 @@ std::vector<int> bouble_sort(std::vector<int> &vec) {
   // {
   // }
 
-  std::size_t vector_size = vec.size();
+  int vector_size = (int)vec.size();
 
   while (true) {
     bool swaped = false;
