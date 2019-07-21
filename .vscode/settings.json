@@ -32,5 +32,6 @@
         "tuple": "cpp",
         "typeinfo": "cpp"
     },
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "files.insertFinalNewline": true
 }
