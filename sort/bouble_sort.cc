@@ -1,11 +1,7 @@
+#include "util.h"
 #include <iostream>
+#include <iterator>
 #include <vector>
-
-void swap(std::vector<int> &vec, int a, int b) {
-  int tmp = vec[a];
-  vec[a] = vec[b];
-  vec[b] = tmp;
-}
 
 std::vector<int> bouble_sort(std::vector<int> &vec) {
   // c++03 style vector loop
@@ -28,7 +24,7 @@ std::vector<int> bouble_sort(std::vector<int> &vec) {
     for (int i = 0; i < vector_size; ++i) {
       for (int j = i; j < vector_size - 1; ++j) {
         if (vec[j] > vec[j + 1]) {
-          swap(vec, j, j + 1);
+          swap_elements(vec, j, j + 1);
           swaped = true;
         }
       }
@@ -42,19 +38,17 @@ std::vector<int> bouble_sort(std::vector<int> &vec) {
 }
 
 int main() {
-  std::vector<int> v = {9, 3, 5, 1, 5, 2, 3};
-  std::cout << "before: ";
-  for (const auto &e : v) {
-    std::cout << e << ", ";
-  }
-  std::cout << std::endl;
+  std::vector<int> v1, v2;
+  setup_arrays(v1, v2);
 
-  bouble_sort(v);
+  std::cout << "before: ";
+  dump_array(v1);
+
+  bouble_sort(v1);
+  assert_arrays(v1, v2);
 
   std::cout << "after: ";
-  for (const auto &e : v) {
-    std::cout << e << ", ";
-  }
-  std::cout << std::endl;
+  dump_array(v1);
+
   return 0;
 }

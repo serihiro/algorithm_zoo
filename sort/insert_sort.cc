@@ -1,3 +1,4 @@
+#include "util.h"
 #include <iostream>
 #include <vector>
 
@@ -16,20 +17,17 @@ void insert_sort(std::vector<int> &vec) {
 }
 
 int main() {
-  std::vector<int> v = {9, 3, 5, 1, 5, 2, 3};
-  std::cout << "before: ";
-  for (const auto &e : v) {
-    std::cout << e << ", ";
-  }
-  std::cout << std::endl;
-
-  insert_sort(v);
+  std::vector<int> v1, v2;
+  setup_arrays(v1, v2);
 
   std::cout << "before: ";
-  for (const auto &e : v) {
-    std::cout << e << ", ";
-  }
-  std::cout << std::endl;
+  dump_array(v1);
+
+  insert_sort(v1);
+  assert_arrays(v1, v2);
+
+  std::cout << "before: ";
+  dump_array(v2);
 
   return 0;
 }
