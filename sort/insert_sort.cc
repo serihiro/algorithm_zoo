@@ -3,7 +3,7 @@
 #include <vector>
 
 void insert_sort(std::vector<int> &vec) {
-  int vec_length = (int)vec.size();
+  int vec_length = static_cast<int>(vec.size());
   for (int i = 1; i < vec_length; ++i) {
     int tmp = vec[i];
     int j = i;

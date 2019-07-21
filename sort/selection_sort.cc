@@ -3,7 +3,7 @@
 #include <vector>
 
 void selection_sort(std::vector<int> &vec) {
-  int vector_length = (int)vec.size();
+  int vector_length = static_cast<int>(vec.size());
   int min, min_index, j;
 
   for (int i = 0; i < vector_length; ++i) {
