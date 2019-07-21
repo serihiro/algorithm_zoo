@@ -3,7 +3,6 @@ CXXFLAGS = -std=c++14 -Wall -Wextra
 OBJS=$(SRCS:.cc=.o)
 SRCS=$(wildcard *.cc)
 
-.PHONY: all
 all: $(OBJS)
 
 bouble_sort.o: bouble_sort.cc util.o
